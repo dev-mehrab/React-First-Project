@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ReactDOM  from "react-dom";
+import Card from "./components/Card";
+import "./index.css";
+import Data from "./data.json";
 
 function App() {
+  let items=[];
+
+  // for(let x = 0; x <Data.length; x++){
+  //   items.push(<Card cardTitle={Data[x].title} cardDesc={Data[x].desc} />)
+  // }
+  // items = Data.map((item) => <Card cardTitle={item.title} cardDesc={item.desc} />);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <h1 className="heading">To Do App</h1>
+       
+      {Data.map((item ,index) => <Card key ={index} cardTitle={item.title} cardDesc={item.desc} />)}
+
     </div>
   );
 }
